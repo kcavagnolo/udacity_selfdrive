@@ -1,0 +1,8 @@
+# dry run
+rsync --dry-run --out-format="[%t]:%o:%f:Last Modified %M" -avrh -e "ssh -i /Users/cavagnolo/.docker/machine/machines/awsgpusd/id_rsa" ubuntu@ec2-107-23-16-192.compute-1.amazonaws.com:/home/ubuntu/sd/ .
+
+# pull
+rsync -avrh -e "ssh -i /Users/cavagnolo/.docker/machine/machines/awsgpusd/id_rsa" ubuntu@ec2-107-23-16-192.compute-1.amazonaws.com:/home/ubuntu/sd/ .
+
+# push
+rsync -avrh -e "ssh -i /Users/cavagnolo/.docker/machine/machines/awsgpusd/id_rsa" . ubuntu@ec2-107-23-16-192.compute-1.amazonaws.com:/home/ubuntu/sd/
